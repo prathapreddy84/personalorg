@@ -1,0 +1,7 @@
+<apex:page >
+  <apex:form >
+     <apex:pageblock title="{!$Label.Testing}">
+     
+     </apex:pageblock>
+  </apex:form>
+</apex:page>

@@ -1,0 +1,19 @@
+<apex:page showHeader="false">
+  <apex:form >
+     <apex:pageblock >
+         <apex:pageBlockSection >
+             <apex:tabPanel switchType="server">
+                <apex:tab label="Eenadu">
+                      Hello Welcome to Eenadu page
+                </apex:tab>
+                <apex:tab label="ABN">
+                    Hello Welcome to ABN page
+                </apex:tab>
+                <apex:tab label="Times of india">
+                     Hello Welcome to TIMES OF INDIA page
+                </apex:tab>
+             </apex:tabPanel>
+         </apex:pageBlockSection>
+     </apex:pageblock>
+  </apex:form>
+</apex:page>

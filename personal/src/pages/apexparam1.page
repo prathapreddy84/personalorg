@@ -1,0 +1,8 @@
+<apex:page controller="sampleApexparam" >
+    <apex:form >
+    <apex:inputtext value="{!var}" id="a"/><br/>    
+    <apex:commandButton value="Demo" action="{!demo}" rerender="a">
+        <apex:param assignTo="{!var}" value="orgn"/>
+    </apex:commandButton>
+    </apex:form>
+</apex:page>

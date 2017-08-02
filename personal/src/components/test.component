@@ -1,0 +1,17 @@
+<apex:component controller="cmpctrl">
+    <apex:form >
+    <apex:outputLabel value="Name"> 
+    <apex:inputField value="{!cust.name}"/>
+    </apex:outputLabel>
+    <br/>
+     <apex:outputLabel value="price"> 
+    <apex:inputField value="{!cust.Price__c}"/>
+     </apex:outputLabel>
+    <br/>
+    <apex:outputLabel value="state"> 
+    <apex:inputField value="{!cust.State__c}"/>
+     </apex:outputLabel>
+    <br/>
+    </apex:form>
+
+</apex:component>

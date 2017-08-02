@@ -1,0 +1,39 @@
+<apex:page showHeader="false" standardController="opportunity" recordSetVar="opplst">
+  <apex:form >
+     <apex:pageblock >
+         <table border="1" width="100%">
+             <tr style="background-color:red;">
+                 <td>
+                     Name
+                 </td>
+                 <td>
+                     Amount
+                 </td>
+                 <td>
+                     Stagename
+                 </td>
+             </tr>
+             <apex:repeat value="{!opplst}" var="opp"> 
+                 <tr style="background-color:skyblue;">
+                     <td>
+                          {!opp.name}
+                     </td>
+                     <td>
+                         {!opp.amount}
+                     </td>
+                     <td>
+                         {!opp.stagename}
+                     </td>
+                 </tr>
+             </apex:repeat>
+         </table>
+         <apex:pageblockButtons >
+             <apex:commandLink value="First" action="{!First}"/> &nbsp;|&nbsp;
+             
+             <apex:commandLink value="Previous" action="{!Previous}"/> &nbsp;&nbsp;|&nbsp;
+             <apex:commandLink value="Next" action="{!Next}"/> &nbsp;&nbsp; |&nbsp;
+             <apex:commandLink value="Last" action="{!Last}"/> 
+         </apex:pageblockButtons>
+     </apex:pageblock>
+  </apex:form>
+</apex:page>

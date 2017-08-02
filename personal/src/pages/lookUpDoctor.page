@@ -1,0 +1,27 @@
+<apex:page standardController="account" extensions="accrecords">
+  <apex:form >
+  <apex:pageBlock >
+  <apex:pageblockTable value="{!acclist}" var="acc">
+               
+             
+              <apex:column headerValue="name" value="{!acc.name}" onclick="seletedDoctor('{!acc.Id}');"/>         
+              <apex:column headerValue="name" value="{!acc.id}" onclick="seletedDoctor('{!acc.Id}');"/>                
+             
+            </apex:pageblocktable>
+  </apex:pageBlock>
+  </apex:form>
+  <script type="text/javascript">
+
+  function seletedDoctor(fid) {
+  
+  
+    if("{!openerObjField}" != "") {
+        parent.window.opener.document.getElementById('{!openerObjField}').value = fid;
+
+        parent.window.opener.fillDoctor();
+    }
+    
+    window.close();
+}
+  </script>
+</apex:page>

@@ -1,0 +1,15 @@
+<apex:page showHeader="false" tabStyle="account" controller="mycontrollercls">
+  <apex:form >
+     <apex:pageblock title="Custom Controller">
+        <apex:pageblockSection title="Page Section">
+            <apex:inputtext value="{!acctname}"/>
+            
+            <apex:outputText value="{!acctname}"></apex:outputText>
+             <apex:outputtext value="{!acctname}"></apex:outputtext>
+           
+            
+            <apex:commandButton value="Refresh"/>
+        </apex:pageblockSection>
+     </apex:pageblock>
+  </apex:form>
+</apex:page>

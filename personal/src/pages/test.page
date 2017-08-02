@@ -1,0 +1,13 @@
+<apex:page standardController="opportunity" showHeader="true">
+  <apex:form >
+  <apex:pageBlock title="helloworld">
+  <apex:pageblockButtons >
+  <apex:commandButton value="Save the oppty" action="{!save}"/>
+  </apex:pageblockButtons>
+  <apex:pageBlockSection title="oppty info" columns="2">
+  <apex:inputField value="{!opportunity.Name}"/>
+  <apex:inputField value="{!opportunity.closeDate}"/>
+  </apex:pageBlockSection>
+  </apex:pageBlock>
+  </apex:form>
+</apex:page>

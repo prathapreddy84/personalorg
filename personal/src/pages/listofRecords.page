@@ -1,0 +1,11 @@
+<apex:page controller="ListOfRecords">
+<apex:form > <apex:pageblock >
+ <apex:commandButton value="List Records" action="{!fetchRecords}" />
+<apex:pageblocktable value="{!cust}" var="a" id="pbTable" rendered="{!showRecords}">
+<apex:column value="{!a.First_Name__c}"/>
+<apex:column value="{!a.Last_Name__c}"/>
+</apex:pageblocktable>
+</apex:pageblock>
+</apex:form>
+
+</apex:page>

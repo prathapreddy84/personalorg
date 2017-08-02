@@ -1,0 +1,51 @@
+<apex:page >
+  <apex:includeScript value="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"/>
+  <script>
+    jQuery(document).ready(function($) {
+      $('#queryform').submit(function(){
+        var params = {
+          part: 'snippet',
+          maxResults: 10,
+          q: $('#query').val(),
+          key: 'AIzaSyAas-chtXLlVzV5vghIJ8mRCflPniml8vA'
+        };
+        var url = 'https://www.googleapis.com/youtube/v3/search?' + $.param(params);
+        $.ajax(url,
+        {
+          success: function(response) {
+            var tmpl = $(
+              '<div>' +
+                '<div>' +
+                  '<div style="float:left;">' +
+                    '<a target="_blank" class="video"><img class="thumb" style="border-width:0;" /></a>' +
+                  '</div>' +
+                  '<p style="font-weight:bold;"><a target="_blank" class="title video"></a></p>' +
+                  '<p><a target="_blank" class="description video"></a></p>' +
+                '</div>' +
+                '<div style="clear:both"></div>' +
+              '</div>');
+            var html = ''
+            for (var i = 0; i < response.items.length; i++) {
+              var item = response.items[i];
+              tmpl.find('.thumb').attr('src', item.snippet.thumbnails.medium.url);
+              tmpl.find('.title').text(item.snippet.title);
+              tmpl.find('.description').text(item.snippet.description);
+              tmpl.find('.video').attr('href', 'http://www.youtube.com/watch?v=' + item.id.videoId);
+              html += tmpl.html();
+            }
+            $('#results').html(html);
+          },
+          error: function(jqXHR, textStatus, errorThrown) {
+            alert(jqXHR.status + ': ' + errorThrown);
+          }
+        });
+        return false;
+      });
+    });
+  </script>
+  <form id="queryform">
+    <input id="query" size="256" placeholder="Search YouTube" />
+    <input type="submit" id="submit" value="Submit" />
+  </form>
+  <div id="results"></div>
+</apex:page>

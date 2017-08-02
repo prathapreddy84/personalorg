@@ -1,0 +1,23 @@
+<apex:page sidebar="false" showHeader="false" standardController="Apex_Page_Tab__c" extensions="CustomApexPageController">   
+<apex:form >
+    <apex:pageBlock >
+
+    <apex:pageBlockSection >
+   
+        <apex:inputField value="{! Apex_Page_Tab__c .first_name__c}" />
+        <apex:inputField value="{! Apex_Page_Tab__c .checkbox__c}"/>
+        <apex:inputField value="{! Apex_Page_Tab__c .LookUpRelation__c}"/>
+        <apex:inputField value="{! Apex_Page_Tab__c .picklist__c}"/>
+         </apex:pageBlockSection>
+
+<apex:outputPanel id="thePanel" rendered="{!displayPopUp}">My span</apex:outputPanel>
+       <apex:pageBlockButtons >
+    <apex:commandButton action="{! saveAndCongrat}" value="Save"/>
+    <apex:commandButton action="{! outputPanel}" value="outputPanel"/>
+
+    </apex:pageBlockButtons>
+       </apex:PageBlock>       
+           
+    </apex:form>
+    <apex:relatedList list="testObject_for_Apex_Pages__r"/>
+      </apex:page>

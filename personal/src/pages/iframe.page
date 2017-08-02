@@ -1,0 +1,44 @@
+<apex:page sidebar="false" id="PG">
+ <apex:pageBlock title="Sample Page">
+    </apex:pageBlock>
+    <apex:iframe src="https://developer.salesforce.com/forums/?id=906F000000097qBIAQ" id="theFrame" scrolling="true" />
+   <apex:pageBlock title="Sample Page">
+   </apex:pageBlock>
+     <apex:pageBlock title="Sample Page">
+   </apex:pageBlock>
+    <apex:pageBlock title="Sample Page">
+   </apex:pageBlock>
+    <apex:pageBlock title="Sample Page">
+   </apex:pageBlock>
+   
+    <apex:pageBlock title="Sample Page">
+   </apex:pageBlock>
+    <apex:pageBlock title="Sample Page">
+   </apex:pageBlock>
+    <apex:pageBlock title="Sample Page">
+   </apex:pageBlock>
+    <apex:pageBlock title="Sample Page">
+   </apex:pageBlock>
+    <apex:pageBlock title="Sample Page">
+   </apex:pageBlock>
+    <apex:pageBlock title="Sample Page">
+   </apex:pageBlock>
+    <apex:pageBlock title="Sample Page">
+   </apex:pageBlock>
+    <apex:pageBlock title="Sample Page">
+   </apex:pageBlock>
+    <apex:pageBlock title="Sample Page">
+   </apex:pageBlock>
+    <apex:pageBlock title="Sample Page">
+   </apex:pageBlock>
+    <apex:pageBlock title="Sample Page">
+   </apex:pageBlock>
+    <apex:pageBlock title="Sample Page">
+   </apex:pageBlock>
+    <apex:pageBlock title="Sample Page">
+   </apex:pageBlock>
+    <script>
+    
+    document.getElementById('PG:theFrame').height = window.innerHeight - 220;
+    </script>
+</apex:page>

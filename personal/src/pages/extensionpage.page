@@ -1,0 +1,15 @@
+<apex:page standardController="Account" extensions="myextensioncls" showHeader="false">
+  <apex:form >
+     <apex:pageblock title="Account Creation">
+        <apex:pageblockSection title="Information">
+            <apex:inputField value="{!Account.name}"/>
+            <apex:inputField value="{!Account.phone}"/>
+            <apex:inputField value="{!Account.annualrevenue}"/>
+            <apex:inputField value="{!Account.billingcity}"/>
+        </apex:pageblockSection>
+        <apex:pageblockButtons >
+           <apex:commandButton value="Save" action="{!saverecord}"/>
+        </apex:pageblockButtons>
+     </apex:pageblock>
+  </apex:form>
+</apex:page>

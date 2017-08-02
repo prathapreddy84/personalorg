@@ -1,0 +1,20 @@
+<apex:page showheader="false" controller="wrappercls" >
+  <apex:form >
+      <apex:actionFunction action="{!processrecords}" name="call" reRender="pb,tb1"/>
+      <apex:pageblock id="pb">
+           <apex:pagemessages ></apex:pagemessages>
+         <apex:pageblockTable value="{!contlst}" var="con" id="tbl">
+             <apex:column headerValue="Action">
+                    <apex:inputcheckbox value="{!con.check}"/>
+             </apex:column>
+             <apex:column value="{!con.conrecd.lastname}"/>
+             <apex:column value="{!con.conrecd.firstname}"/>
+             <apex:column value="{!con.conrecd.phone}"/>
+             <apex:column value="{!con.conrecd.mailingcity}"/>
+         </apex:pageblockTable>
+         <apex:pageblockButtons > 
+         <apex:commandButton value="Delete" action="{!processrecords}" reRender="pb" immediate="false" oncomplete="alert('His');return false; "/>
+         </apex:pageblockButtons>
+      </apex:pageblock>
+  </apex:form>
+</apex:page>

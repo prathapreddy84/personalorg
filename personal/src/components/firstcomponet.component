@@ -1,0 +1,5 @@
+<apex:component >
+ <b>
+ <apex:outputText value="This is my custom component."/>
+</b>
+</apex:component>

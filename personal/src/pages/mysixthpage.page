@@ -1,0 +1,35 @@
+<apex:page showHeader="false" id="pg">
+ <style>
+     .mystyle{
+        font-family:gigi;
+        font-size:20px;
+        color:red;
+        font-weight:bold;
+     }
+     .mystyletemp{
+        font-family:calibri;
+        font-size:20px;
+        color:green;
+        font-weight:bold;
+     }
+ </style>
+ <script>
+ 
+    function changestyle(){
+        console.debug('hi');
+        document.getElementById("pg:fm:pb:pbs:lbl").className="mystyle";
+    }
+    function unchangestyle(){
+      alert('hi');
+        document.getElementById("pg:fm:pb:pbs:lbl").className="mystyletemp";
+    }
+ </script>
+ 
+ <apex:form id="fm">
+    <apex:pageblock id="pb">
+       <apex:pageblockSection id="pbs" >
+          <apex:outputlabel id="lbl" value="Please take the mouse on to me !!!" onmouseover="changestyle();" onmouseout="unchangestyle();"> </apex:outputlabel>
+       </apex:pageblockSection> 
+    </apex:pageblock>
+ </apex:form>
+</apex:page>

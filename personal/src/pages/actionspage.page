@@ -1,0 +1,13 @@
+<apex:page showheader="false" tabStyle="Account" controller="actionscls" action="{!callingaction}">
+  <apex:form >
+    <apex:pageblock title="Actions Calling">
+      <apex:pageblockSection title="Actions">
+           <apex:outputText value="{!msg}"> </apex:outputText>
+      </apex:pageblockSection>
+      <apex:pageblockButtons >
+        <apex:commandButton value="Call Method" action="{!callingmethod}"/>
+        <apex:commandLink value="Call Method" action="{!callingmethodtemp}"/>
+      </apex:pageblockButtons>
+    </apex:pageblock>
+  </apex:form>
+</apex:page>

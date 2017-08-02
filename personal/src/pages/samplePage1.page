@@ -1,0 +1,14 @@
+<apex:page standardController="Position__c" extensions="extesioncontroller">
+  <apex:form >
+    <apex:pageBlock title="My Content" mode="edit">
+      <apex:pageBlockButtons >
+        <apex:commandButton action="{!save}" value="Save"/>
+      </apex:pageBlockButtons>
+      <apex:pageBlockSection title="My Content Section" columns="2">
+        <apex:inputField value="{!p.name}" required="true"/>
+        <apex:inputField value="{!p.Status__c}"/>
+
+      </apex:pageBlockSection>
+    </apex:pageBlock>
+  </apex:form>
+</apex:page>

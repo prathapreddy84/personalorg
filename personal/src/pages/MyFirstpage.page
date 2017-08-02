@@ -1,0 +1,10 @@
+<apex:page showHeader="false" tabStyle="account" >
+   <apex:form > 
+         <apex:pageBlock title="salesforce page" >
+                <apex:pageBlockSection title="firstpage" columns="1" collapsible="false">
+                        <apex:inputText label="Enter value"/>
+                        <apex:inputText label="Enter password"/>                        
+                </apex:pageBlockSection>
+         </apex:pageBlock>
+    </apex:form>    
+</apex:page>

@@ -1,0 +1,14 @@
+<apex:page showHeader="false" sidebar="true" tabstyle="contact">
+  <apex:form >
+     <apex:pageblock title="My Second Page">
+         <apex:pageblockSection title="Information" collapsible="false" columns="3">
+             <apex:inputText label="Please Enter UserName"/>
+             <apex:inputSecret label="Please Enter Password"/>             
+         </apex:pageblockSection>
+         <apex:pageblockbuttons location="both">
+            <apex:commandButton value="Sign In" action="https://gmail.com"/>
+            <apex:commandLink value="Register" action="https://accounts.google.com/SignUp?service=mail&continue=https%3A%2F%2Fmail.google.com%2Fmail%2F&ltmpl=default"/>
+         </apex:pageblockbuttons>
+     </apex:pageblock>
+  </apex:form>
+</apex:page>

@@ -1,0 +1,40 @@
+<apex:page showheader="false" tabStyle="Account" controller="picklstcls">
+   <apex:form >
+      <apex:pageblock >
+          <apex:pageblockSection title="PickList Display">
+               <apex:selectList label="Please Select Country" size="1" value="{!selectval}" multiselect="false">
+                   <apex:selectOption itemLabel="Ind" itemvalue="India">                     
+                   </apex:selectOption>
+                   <apex:selectOption itemLabel="Germ" itemvalue="Germany">                     
+                   </apex:selectOption>
+                   <apex:selectOption itemLabel="Swed" itemvalue="Sweden">                     
+                   </apex:selectOption>
+                   <apex:selectOption itemLabel="Denm" itemvalue="Denmark">                     
+                   </apex:selectOption>
+               </apex:selectList>
+               <apex:outputtext value="{!selectval}" label="Selected Value is :"></apex:outputtext>
+               <apex:commandButton value="Refresh"/>
+          </apex:pageblockSection>
+          <apex:pageblockSection title="Checkbox Values">
+                <apex:selectCheckboxes value="{!selectlst}" label="Please select country:">
+                      <apex:selectoption itemlabel="Ind" itemvalue="India">
+                      </apex:selectoption>
+                      <apex:selectoption itemlabel="Swed" itemvalue="Sweden">
+                      </apex:selectoption>
+                      <apex:selectoption itemlabel="Germ" itemvalue="Germany">
+                      </apex:selectoption>
+                </apex:selectCheckboxes>
+          </apex:pageblockSection>
+          <apex:pageblockSection title="Radio Buttons">
+               <apex:selectRadio label="Please select Gender" value="{!selectval}">
+                    <apex:selectOption itemLabel="M" itemvalue="Male">
+                    
+                    </apex:selectOption>
+                    <apex:selectOption itemLabel="F" itemvalue="Female">
+                    
+                    </apex:selectOption>
+               </apex:selectRadio>
+          </apex:pageblockSection>
+      </apex:pageblock>
+   </apex:form>
+</apex:page>

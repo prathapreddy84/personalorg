@@ -1,0 +1,10 @@
+<apex:page showHeader="false" standardStylesheets="false"
+ tabStyle="contact">
+  <apex:form >
+    <apex:pageBlock title="Styles">
+      <apex:pageblockSection title="Section Style">
+      
+      </apex:pageblockSection>
+    </apex:pageBlock>
+  </apex:form>
+</apex:page>

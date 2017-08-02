@@ -1,0 +1,42 @@
+<apex:page showHeader="false">
+  <apex:form >
+      <style>
+           .mystyletemp{
+                 font-family:gigi;
+                 font-size:15px;
+                 color:violet;
+                 font-weight:bold;
+           }
+     </style> 
+    // <apex:stylesheet value="{!$Resource.Mystyle}"/>
+     <table border="1" width="100%" height="200px;" style="font-size:20px;background-color:#660099;">
+         <tr >
+            <td class="mystyletemp">
+                Student Name 
+            </td>
+            <td class="number">
+              </td>
+         </tr>
+         <tr>
+            <td class="mystyle">
+               Rajesh
+            </td>
+            <td class="mystyle">
+                12345678
+            </td>
+         </tr>
+         <tr>
+            <td class="mystyle">
+               Suresh
+            </td>
+            <td style="font-family:gigi;color:white;">
+               58457665
+            </td>
+         </tr>
+     </table>
+     <apex:outputlabel value="Please Enter Label" style="font-family:gigi;color:red;"> </apex:outputlabel>
+     <apex:outputlabel value="Please Enter Label" styleclass="mystyle"> </apex:outputlabel>
+    
+  </apex:form>
+   <apex:listViews type="Account"/>
+</apex:page>

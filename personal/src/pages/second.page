@@ -1,0 +1,22 @@
+<apex:page controller="second">
+ <apex:form >
+ <apex:pageBlock title="caluculator"> 
+ <apex:pageBlockSection columns="1" title="titleOperations" collapsible="false">
+ <apex:pageBlockSectionItem >
+ <apex:outputLabel >Enter a value</apex:outputLabel>
+ <apex:inputText value="{!avalue}"/>
+ </apex:pageBlockSectionItem>
+  <apex:pageBlockSectionItem >
+ <apex:outputLabel >Enter b value</apex:outputLabel>
+ <apex:inputText value="{!bvalue}"/>
+ </apex:pageBlockSectionItem>
+ 
+ <apex:pageBlockSectionItem >
+ <apex:outputLabel id="one">performed {!operation} of {!avalue} and {!bvalue} and the results {!result}</apex:outputLabel>
+ </apex:pageBlockSectionItem>
+ </apex:pageBlockSection>
+  </apex:pageBlock>
+  <apex:commandButton value="+" action="{!ADD}" reRender="one"/>
+  <apex:commandButton value="-" action="{!subb}" reRender="one"/>
+ </apex:form>
+</apex:page>

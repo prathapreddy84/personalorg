@@ -1,0 +1,11 @@
+<apex:page controller="restCallingPage">
+  <apex:form >
+  <apex:outputLabel >JSON body:</apex:outputLabel>
+  <apex:outputtext value="{!jsonString}" id="panel"/>
+  <apex:pageblock >
+  <apex:pageBlockButtons >
+  <apex:commandButton value="callendpoint" action="{!callendpoint}" reRender="panel"/>
+  </apex:pageBlockButtons>
+  </apex:pageblock>
+  </apex:form>
+</apex:page>

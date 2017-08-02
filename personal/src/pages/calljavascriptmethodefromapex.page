@@ -1,0 +1,20 @@
+<apex:page showHeader="true" sidebar="true" controller="Controllertojavascriptcontroller">
+<script>
+  function func()
+  {
+  alert('function called');
+  window.setTimeout(function(){ window.location.reload(); }, 7000);
+  }
+  </script>
+ 
+  <apex:form >
+    <apex:pageBlock title="just page block"  >
+    <apex:pageBlockButtons title="button title" location="bottom">
+        <apex:commandButton value="call controller" action="{!func}" >
+        </apex:commandButton>
+    </apex:pageBlockButtons>
+        <apex:outputText value="{!scriptvar}" escape="false">
+        </apex:outputText>
+    </apex:pageBlock>
+  </apex:form>
+</apex:page>

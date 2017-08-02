@@ -1,0 +1,19 @@
+<apex:page standardController="contact" recordSetVar="conlst" showHeader="false">
+  <apex:form >
+    <apex:pageblock >
+         <apex:dataTable value="{!conlst}" var="con">
+              <apex:column value="{!con.lastname}" headerValue="Last Name"/>
+              <apex:column value="{!con.firstname}" headerValue="First Name"/>
+              <apex:column value="{!con.phone}" headerValue="Phone"/>
+              <apex:column value="{!con.mailingcity}" headerValue="City"/>
+         </apex:dataTable>
+         <apex:pageblockButtons >
+             <apex:commandLink value="First" action="{!First}"/> &nbsp;|&nbsp;
+             
+             <apex:commandLink value="Previous" action="{!Previous}"/> &nbsp;&nbsp;|&nbsp;
+             <apex:commandLink value="Next" action="{!Next}"/> &nbsp;&nbsp; |&nbsp;
+             <apex:commandLink value="Last" action="{!Last}"/> 
+         </apex:pageblockButtons>
+    </apex:pageblock>
+  </apex:form>
+</apex:page>

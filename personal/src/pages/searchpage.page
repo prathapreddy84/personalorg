@@ -1,0 +1,13 @@
+<apex:page controller="search" showHeader="false" >
+<apex:form >
+  <apex:pageBlock >
+          <apex:pageBlockSection >
+                  <apex:inputText label="FirstName" value="{!name}"/>
+          
+          </apex:pageBlockSection>
+          <apeX:pageBlockButtons >
+              <apex:commandButton value="save" action="{!save}"/>
+          </apeX:pageBlockButtons>
+  </apex:pageBlock>
+  </apex:form>
+</apex:page>

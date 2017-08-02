@@ -1,0 +1,21 @@
+<apex:page showheader="false" standardController="Account" recordSetVar="acctlst">
+  <apex:form >
+     <apex:pageblock >
+         <apex:pageblockSection columns="1">
+              <Apex:pageblockTable value="{!acctlst}" var="acct">
+                  <apex:column value="{!acct.name}"/>
+                  <apex:column value="{!acct.phone}"/>
+                  <apex:column value="{!acct.annualrevenue}"/>
+                  <apex:column value="{!acct.billingcity}"/>
+              </Apex:pageblockTable>
+         </apex:pageblockSection>
+         <apex:pageblockButtons >
+             <apex:commandLink value="First" action="{!First}"/> &nbsp;|&nbsp;
+             
+             <apex:commandLink value="Previous" action="{!Previous}"/> &nbsp;&nbsp;|&nbsp;
+             <apex:commandLink value="Next" action="{!Next}"/> &nbsp;&nbsp; |&nbsp;
+             <apex:commandLink value="Last" action="{!Last}"/> 
+         </apex:pageblockButtons>
+     </apex:pageblock>
+  </apex:form>
+</apex:page>

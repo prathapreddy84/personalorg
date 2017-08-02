@@ -1,0 +1,7 @@
+<apex:page showHeader="false">
+   <apex:form >
+       <apex:includeScript value="{!$Resource.Myscript}"/>
+       <apex:stylesheet value="{!$Resource.Mystyle}"/>
+       <apex:outputlabel value="Please Click me!!" onclick="validate();" styleclass="mystyle"> </apex:outputlabel>
+   </apex:form>
+</apex:page>

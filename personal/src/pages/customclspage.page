@@ -1,0 +1,15 @@
+<apex:page showheader="false" controller="customrecdcls"  tabStyle="Account">
+   <apex:form >
+      <apex:pageBlock title="Account Creation">
+         <apex:pageblockSection title="Information">
+             <apex:inputfield value="{!acct.name}"/>
+             <apex:inputfield value="{!acct.phone}"/>
+             <apex:inputfield value="{!acct.annualrevenue}"/>
+             <apex:inputfield value="{!acct.accountnumber}"/>
+         </apex:pageblockSection>
+         <apex:pageblockButtons >
+             <apex:commandButton value="Save Recd" action="{!saverecd}"/>
+         </apex:pageblockButtons>
+      </apex:pageBlock>
+   </apex:form>
+</apex:page>

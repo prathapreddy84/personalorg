@@ -1,0 +1,27 @@
+<apex:page standardController="customer__c" extensions="SCOwnclass" >
+    <apex:form >
+    <apex:pageBlock title="Customer details" >
+    <apex:pageMessages />
+        <apex:pageBlockSection title="SEction1" >
+        
+               <apex:inputField value="{!cust.name}" />
+            
+               <apex:inputField value="{!cust.Price__c}"/>
+            </apex:pageBlockSection>
+             <apex:pageBlockSection title="SEction2">
+                  <apex:inputField value="{!cust.State__c}"/>
+             </apex:pageBlockSection>
+             <apex:pageblockbuttons location="top">
+                  <apex:commandButton value="SAVE RECORD" action="{!saveREC}" />
+                  <apex:commandButton value="Create Child RECORD" action="{!createchldrec}" />
+                  <apex:commandLink value="test" action="{!createchldrec}"/>
+       
+               
+             </apex:pageblockbuttons>
+        </apex:pageBlock>
+       
+    </apex:form>
+  
+  <apex:relatedList list="tests__r" />
+
+</apex:page>

@@ -1,0 +1,23 @@
+<apex:page controller="third">
+<apex:form >
+<apex:pageBlock >
+<apex:pageblockTable value="{!names}" var="a">
+<apex:column value="{!a}" />
+<apex:column value="{!name}" />
+</apex:pageblockTable>
+<apex:outputLabel ></apex:outputLabel>
+</apex:pageBlock>
+<apex:selectList size="1" value="{!name}">
+<apex:selectOptions value="{!option}"></apex:selectOptions>
+<apex:actionSupport event="onchange" reRender="one"/>
+</apex:selectList>
+<apex:selectList size="1" value="{!name}">
+<apex:selectOption itemLabel="JAVA" itemValue="JAVA"></apex:selectOption>
+<apex:selectOption itemLabel="SFDC" itemValue="SF"></apex:selectOption>
+<apex:actionSupport event="onchange" reRender="two"/>
+</apex:selectList>
+<apex:outputLabel id="one">you have selected {!name}  </apex:outputLabel>
+<apex:outputLabel id="two">you have selected {!name}</apex:outputLabel>
+<apex:dataList value="{!stud}" var="b">{!b}</apex:dataList>
+</apex:form>
+</apex:page>

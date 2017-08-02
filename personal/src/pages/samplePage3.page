@@ -1,0 +1,8 @@
+<apex:page controller="xyz">
+ <apex:form >
+ <apex:inputText value="{!name}"/>
+  <apex:inputText value="{!company}"/>
+  <apex:inputCheckbox value="{!status}"/>
+  <apex:commandButton value="save" action="{!savemethod}"/>
+ </apex:form>
+</apex:page>

@@ -1,0 +1,17 @@
+<apex:page controller="CampaignPopup">
+ <apex:form >
+      <apex:pageBlock title="Upload a File">
+              <apex:pageBlockSection showHeader="false" columns="2" id="block1">
+                <apex:pageBlockSectionItem >
+                <apex:outputLabel value="File" for="file"/>
+              <!--<apex:inputFile value="{!document.body}" filename="{!document.name}" id="file"/>-->
+              <apex:inputFile value="{!csvFileBody}" filename="{!csvAsString}" id="file"/>
+              
+            </apex:pageBlockSectionItem>
+           </apex:pageBlockSection>
+           <apex:pageBlockButtons >
+        <apex:commandButton action="{!upload}" value="Save"/>
+      </apex:pageBlockButtons>
+      </apex:pageBlock>
+ </apex:form>
+</apex:page>

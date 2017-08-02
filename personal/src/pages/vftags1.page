@@ -1,0 +1,35 @@
+<apex:page standardController="customer__c" extensions="custext" >
+  <apex:form >
+    <apex:pageBlock >
+    <apex:pageblockSection title="using Pageblocktable">
+    <apex:pageblocktable value="{!lstcusts}" var="l" >
+    <apex:column value="{!l.name}"/>
+    <apex:column value="{!l.Price__c}"/>
+    </apex:pageblocktable>
+   </apex:pageblockSection>
+   <apex:pageblockSection title="using Repeat">
+       <apex:repeat value="{!lstcusts}" var="l">
+           <apex:outputField value="{!l.name}"/>
+           <apex:outputField value="{!l.Price__c}"/>
+       </apex:repeat>
+   </apex:pageblockSection>
+   
+   <apex:pageblockSection title="using DataTable">
+       <apex:datatable value="{!lstcusts}" var="l">
+          
+    <apex:column >
+        <apex:facet name="header">CustName</apex:facet>{!l.name}
+    </apex:column>
+    <apex:column >
+        <apex:facet name="header">CustPrice</apex:facet>{!l.Price__c}
+    </apex:column>
+    </apex:datatable>
+      
+   </apex:pageblockSection>
+   
+  </apex:pageBlock>
+  
+  
+  </apex:form>
+  
+</apex:page>

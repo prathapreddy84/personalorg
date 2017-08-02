@@ -1,0 +1,23 @@
+<apex:page controller="ATestCase">
+<script>
+function checkLimit(limitField, limitCount, limitNum)
+{
+    if (limitField.value.length > limitNum) {
+        limitField.value = limitField.value.substring(0, limitNum);
+    } else {
+        limitCount.value = limitNum - limitField.value.length;
+    }
+}
+</script>
+<apex:form >
+<apex:pageBlock title="Text Limit">
+<apex:pageBlockSection columns="1" >
+
+<apex:inputTextarea value="{!myVar}" onkeydown="checkLimit(this,this.form.countdown,10);"  onkeyup="checkLimit(this,this.form.countdown,10);" onchange="checkLimit(this,this.form.countdown,10);"/>
+
+<font size="1">(Maximum characters: 10)<br/>
+You have <input readonly="true" type="text" name="countdown" size="3" value="10"/> characters left.</font>
+</apex:pageBlockSection> 
+</apex:pageBlock>
+</apex:form>
+</apex:page>

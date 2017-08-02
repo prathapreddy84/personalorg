@@ -1,0 +1,10 @@
+<apex:page controller="actionpollercls" showheader="false" tabStyle="Lead">
+   <apex:form >
+       <apex:pageBlock title="Action Poller Page">
+           <apex:actionPoller action="{!incresecount}" interval="5" reRender="pbs"/>
+           <apex:pageblockSection title="Poller Tag" id="pbs">
+                 <apex:outputtext value="{!count}" label="Latest Count is :"> </apex:outputtext>
+           </apex:pageblockSection>
+       </apex:pageBlock> 
+   </apex:form>
+</apex:page>

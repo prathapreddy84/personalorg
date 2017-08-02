@@ -1,0 +1,15 @@
+<apex:page controller="SearchController1" title="SearchPage" showHeader="true" sidebar="false" id="page">
+    <apex:form id="form">
+        <apex:pageBlock id="block">
+            <apex:pageBlockButtons >
+                <apex:commandButton value=" Search!! " title=" Search!! " action="{!doSearch}" reRender="form" />
+                <apex:commandButton value=" Click!! " title=" Click!! " action="{!doClick}" rendered="{!accounts.size > 0}" />
+            </apex:pageBlockButtons>
+            <apex:pageBlockTable value="{!accounts}" var="item">
+                <apex:column headerValue="{!$ObjectType.Account.Fields.Name.Label}">
+                    <apex:outputText value="{!item.Name}" />
+                </apex:column> 
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

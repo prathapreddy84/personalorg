@@ -1,0 +1,16 @@
+<apex:page standardController="contact" recordSetVar="conlst" showHeader="false">
+  <apex:form >
+     <apex:pageblock >
+        <apex:dataList value="{!conlst}" var="con" type="circle">
+             {!con.name} ,&nbsp; {!con.phone} 
+        </apex:dataList>
+        <apex:pageblockButtons >
+             <apex:commandLink value="First" action="{!First}"/> &nbsp;|&nbsp;
+             
+             <apex:commandLink value="Previous" action="{!Previous}"/> &nbsp;&nbsp;|&nbsp;
+             <apex:commandLink value="Next" action="{!Next}"/> &nbsp;&nbsp; |&nbsp;
+             <apex:commandLink value="Last" action="{!Last}"/> 
+        </apex:pageblockButtons>
+     </apex:pageblock>
+  </apex:form>
+</apex:page>

@@ -1,0 +1,20 @@
+<apex:page standardController="Case" extensions="casectrl">
+<apex:form id="thePanel">
+<apex:outputPanel rendered="{!bRenderThePanel}">  
+<table style="width:100%">
+  <tr>
+    <th>subject</th>
+    <th>name</th> 
+   
+  </tr>
+     <apex:repeat value="{!cases1}" var="account" id="theRepeat">
+      <tr>
+            <td><apex:outputText value="{!account.subject}"/></td>   
+            <td><apex:outputText value="{!account.owner.name}"/></td>    
+       </tr>   
+    </apex:repeat>
+    </table>
+    </apex:outputPanel>
+    <apex:commandButton action="{!DoSomeCalcs}" rerender="thePanel" value="FIRE!"/>  
+    </apex:form>
+</apex:page>

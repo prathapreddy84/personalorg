@@ -1,0 +1,7 @@
+<apex:page showHeader="false" tabStyle="contact">
+  <apex:pageblock title="My Fourth Page">
+    <apex:pageblockSection title="My Section" collapsible="false" columns="1">
+        <apex:listViews type="contact"/>
+    </apex:pageblockSection>
+  </apex:pageblock>
+</apex:page>

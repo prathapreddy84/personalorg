@@ -1,0 +1,23 @@
+<apex:page controller="paramctrl">
+<script>
+var urname,usrPass;
+function params(){
+    urname=document.getElementById('name').value;
+    alert(urname);
+    usrPass=document.getElementById('password').value;
+     alert(usrPass);
+    dispalyhtml();
+}
+</script>
+ <apex:form id="frm">
+     <apex:actionFunction name="dispalyhtml" action="{!display}" reRender="frm" >
+         <apex:param name="urname" assignTo="{!userName}" value="{!userName}"/>
+          <apex:param name="usrPass" assignTo="{!userPassword}" value="{!userPassword}"/>
+     </apex:actionFunction>
+   First name:
+   
+  <input type="text" name="firstname" id="name" value=''/><br/>
+     Password: <input type="text" id="password" value=''/><br/>
+ <input type="button" onclick="params();" value="click this"/>
+ </apex:form>
+</apex:page>

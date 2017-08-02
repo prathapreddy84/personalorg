@@ -1,0 +1,24 @@
+<apex:page controller="six">
+  <apex:form >
+  <apex:pageBlock >
+  <apex:pageBlockSection >
+  <apex:pageblockSectionItem >
+  <apex:outputLabel > Object Name</apex:outputLabel>
+  
+  <apex:selectList value="{!objName}" size="1">
+  <apex:selectOptions value="{!options}">
+  </apex:selectOptions>
+  </apex:selectList>
+  </apex:pageblockSectionItem>
+  <apex:pageBlockSectionItem id="one">
+  <apex:outputLabel >{!objName}-Fields</apex:outputLabel>
+  <apex:selectList size="1" style="width:150px">
+  <apex:selectOptions value="{!Filedsoptions}">
+  </apex:selectOptions>
+  </apex:selectList>
+  </apex:pageBlockSectionItem>
+  <apex:commandButton value="click" action="{!show}"/>
+  </apex:pageBlockSection>
+  </apex:pageBlock>
+  </apex:form>
+</apex:page>

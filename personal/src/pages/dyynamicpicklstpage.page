@@ -1,0 +1,28 @@
+<apex:page showheader="false" controller="dynamicpicklstcls" tabStyle="contact">
+    <apex:form >
+       <apex:pageBlock rendered="true">
+          
+          <apex:actionFunction name="callfunction" action="{!actionmethod}" rerender="pbs" status="statmsg"/>
+          <apex:actionstatus starttext="Executing...." stoptext="Finished !!!!" id="statmsg"> </apex:actionstatus>
+          
+          <apex:pageblockSection title="Dynamic Picklist Action Function" id="pbs" rendered="true">
+               <apex:selectList label="Please Select value" size="1" value="{!seleval}" onblur="callfunction();">
+                    <apex:selectOptions value="{!picklstvals}">                    
+                    </apex:selectOptions>
+               </apex:selectList>
+               <apex:outputText value="{!seleval}" label="Selected Value:" id="opt" rendered="{!display}"></apex:outputText>
+               <apex:commandLink value="Refresh"/>
+          </apex:pageblockSection>
+          
+          <apex:pageblockSection title="Dynamic Picklist Action Support" id="pbs1" rendered="true" >
+               <apex:selectList label="Please Select value" size="1" value="{!seleval}">
+                    <apex:actionsupport event="onblur" action="{!actionmethod}" rerender="pbs1" status="statmsg"/>
+                    <apex:selectOptions value="{!picklstvals}">                    
+                    </apex:selectOptions>
+               </apex:selectList>
+               <apex:outputText value="{!seleval}" label="Selected Value:" id="opt1" rendered="{!display}"></apex:outputText>
+               <apex:commandLink value="Refresh"/>
+          </apex:pageblockSection>
+       </apex:pageBlock>
+    </apex:form>
+</apex:page>

@@ -1,0 +1,23 @@
+<apex:page showHeader="true" id="mypage">
+   <apex:form id="myfm">
+      <script>
+          function validate(){
+              alert('Hello');
+              var username=document.getElementById('mypage:myfm:pb:pbs:uname').value;              
+              var userpass=document.getElementById('mypage:myfm:pb:pbs:upass').value;
+              if(username=='' || userpass==''){
+                 alert('Please Enter username and password to Validate');
+              }
+          }
+      </script>
+      <apex:pageblock title="JS Page" id="pb">
+          <apex:pageblockSection title="MY JS Section" collapsible="false" columns="1" id="pbs">
+              <apex:inputText label="Please Enter Username" id="uname"/>
+              <apex:inputsecret label="Please Enter Password" id="upass"/>
+          </apex:pageblockSection>
+          <apex:pageblockButtons location="top">
+             <apex:commandButton value="Validate" onclick="validate();return false;"/>
+          </apex:pageblockButtons>
+      </apex:pageblock>
+   </apex:form>
+</apex:page>

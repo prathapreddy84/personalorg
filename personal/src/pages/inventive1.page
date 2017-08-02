@@ -1,0 +1,112 @@
+<apex:page >
+<apex:form >
+  <apex:pageBlock title="Address Information" id="pbPractAddr">
+        <table width="100%" cellpadding="0" cellspacing="0" border="0">
+            <tr>
+                <td align="center" width="30%" colspan="2"><b><u>Shipping Address</u></b></td>
+                <td align="center" width="30%" colspan="2">
+                   
+                    Check if Mailing Address is same as Shipping Address</td>
+                <td align="center" width="35%" colspan="2"><b><u>Mailing Address</u></b></td>
+            </tr>
+            <tr>
+                <td align="right" class="labelCol">Street Address</td>
+                <td align="left" class="dataCol">
+                    <input type="text"  id="street1" onkeydown="clearFields()" size="35"/>
+                   
+                </td>
+                <td align="right" class="labelCol">&nbsp;</td>
+                <td align="left" class="dataCol">&nbsp;</td>
+                <td align="right" class="labelCol">Street Address</td>
+                <td align="left" class="dataCol">
+                    <input type="text"  id="mailstreet1" onkeydown="mailclearFields()" size="35"/>
+                    
+                </td>
+            </tr>
+            <tr>
+                <td align="right" class="labelCol">City</td>
+                <td align="left" class="dataCol">
+                    <input type="text" id="city"  />
+                    
+                </td>
+                <td align="right" class="labelCol">&nbsp;</td>
+                <td align="left" class="dataCol">&nbsp;</td>
+                <td align="right" class="labelCol">City</td>
+                <td align="left" class="dataCol">
+                    <input type="text" id="mailcity"  />
+                      
+                </td>
+            </tr>
+            <tr>
+                <td align="right" class="labelCol">State</td>
+                <td align="left" class="dataCol">
+                    <input type="text" id="state"  />
+                    
+                </td>
+                <td align="right" class="labelCol">&nbsp;</td>
+                <td align="left" class="dataCol">&nbsp;</td>
+                <td align="right" class="labelCol">State</td>
+                <td align="left" class="dataCol">
+                    <input type="text" id="mailstate"  />
+                   
+                </td>
+            </tr>
+            <tr>
+                <td align="right" class="labelCol">Zip</td>
+                <td align="left" class="dataCol">
+                    <input type="text" id="zip"  />
+                   
+                </td>
+                <td align="right" class="labelCol">&nbsp;</td>
+                <td align="left" class="dataCol">&nbsp;</td>
+                <td align="right" class="labelCol">Zip</td>
+                <td align="left" class="dataCol">
+                    <input type="text" id="mailzip"  />
+                    
+                </td>
+            </tr>
+           
+        </table>
+               
+    </apex:pageBlock>
+    </apex:form>
+     <link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet" type="text/css"/>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="//d79i1fxsrar4t.cloudfront.net/jquery.liveaddress/2.4/jquery.liveaddress.min.js"></script>
+    <script>
+     var liveaddress = $.LiveAddress({token: 'QSOzljPpfyntmL8Ghb5t',
+                                key:'bab59088-30c9-4672-a381-0f4961f13cf6',
+                                debug: false,
+                                autoVerify: true,
+                                waitForStreet: true
+                                
+            
+        });
+       
+       
+    </script>
+     <script>
+     function clearFields(){
+    var valid = $('#valid').prop('checked');
+    if(valid){
+        $('#city').val('');
+        $('#state').val('');
+        $('#zip').val('');
+        //$('#sscode').val('');
+        //$('#rdi').val('');
+        $('#valid').prop('checked', false);
+    }
+}
+function mailclearFields(){
+    var valid = $('#mailvalid').prop('checked');
+    if(valid){
+        $('#mailcity').val('');
+        $('#mailstate').val('');
+        $('#mailzip').val('');
+        //$('#sscode').val('');
+        //$('#rdi').val('');
+        $('#mailvalid').prop('checked', false);
+    }
+}
+ </script>
+</apex:page>

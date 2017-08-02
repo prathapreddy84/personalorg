@@ -1,0 +1,37 @@
+<apex:page controller="KenTestControllerMultiPage">
+
+
+
+<apex:form id="theForm" >
+
+    <apex:pageBLock >
+
+
+
+       <apex:pageBlockButtons >
+
+            <apex:commandButton action="{!step1}" value="Goto One"/>
+
+        </apex:pageBlockButtons>
+
+
+
+        <apex:pageBlockSection title="My Section" columns="1" id="mySection" collapsible="false">
+
+            <apex:inputText value="{!data1}"/>
+
+            <apex:inputText value="{!data2}"/>
+
+            <apex:inputText value="{!data3}" />
+
+        </apex:pageBlockSection>   
+
+          
+
+    </apex:pageBLock>
+
+</apex:form>
+
+
+
+</apex:page>

@@ -1,0 +1,38 @@
+<apex:page controller="ActionCTRL" id="pg">
+<script>
+    function save(){
+    
+        var pr=document.getElementById('pg:fm:pb:price').value;
+        
+        if(pr==50){
+            alert("PRice should not be 50");
+        }
+        else{
+          
+            save1();
+            
+            
+       }
+            
+            
+       
+   
+    }
+  
+</script>
+<apex:form id="fm">
+<apex:actionFunction name="save1" action="{!save}" rerender=""/>
+<apex:actionPoller action="{!actionpollarsample}" interval="5" reRender="Counter"/>
+<apex:pageBlock id="pb">
+    <apex:outputText value="Exampple for action pollar :{!counter}" id="Counter" /><br/>
+    <apex:inputField value="{!cust.name}"/><br/>
+    <apex:inputField value="{!cust.Price__c}" id="price"/><br/>
+    <apex:inputField value="{!cust.State__c}" /><br/>
+    <apex:pageblockButtons >
+    <apex:commandButton value="save" onclick="save()"/>
+    </apex:pageblockButtons>
+    </apex:pageBlock>
+    
+</apex:form>
+  <apex:relatedList list="loans__c" title="Loans Related list"/>
+</apex:page>

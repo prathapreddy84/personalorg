@@ -1,0 +1,17 @@
+<apex:page controller="multipliclist">
+<apex:form >
+    <apex:actionFunction name="GetCity" reRender="pb" action="{!RelatedCity}"/>
+    <apex:pageBlock id="pb">
+        <apex:pageBlockSection >
+            <apex:selectList multiselect="false" size="1" value="{!SelectedState}" onchange="GetCity() ;">
+                <apex:selectOption itemLabel="--None--" itemValue=""/>
+                <apex:selectOptions value="{!State}"/>
+            </apex:selectList>
+            <apex:selectList multiselect="false" size="1">
+                <apex:selectOption itemLabel="--None--" itemValue=""/>
+                <apex:selectOptions value="{!City}"/>
+            </apex:selectList>
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+</apex:form>
+</apex:page>

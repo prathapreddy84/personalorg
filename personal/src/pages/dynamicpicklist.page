@@ -1,0 +1,41 @@
+<apex:page controller="DynamicPicklistController" docType="html-5.0"  >
+<apex:form >
+
+<apex:pageBlock title="Picklist values">
+
+<apex:pageBlockSection title="Add picklist value">
+
+    <apex:pageBlockSectionItem >
+        <apex:outputText value="New picklist value" styleclass="FieldLabel"/>
+    </apex:pageBlockSectionItem>
+    <apex:pageBlockSectionItem >
+        <apex:input value="{! newPicklistValue }" />
+        <apex:commandLink action="{!addPicklistValue}" value="Add picklist value" />
+        
+    </apex:pageBlockSectionItem>
+
+</apex:pageBlockSection>
+ 
+ <apex:pageBlockSection title="Delete picklist value" >
+ <apex:pageBlockSectionItem >
+ <apex:outputText value="Picklist values" styleclass="FieldLabel"/>
+ </apex:pageBlockSectionItem>
+ <apex:pageBlockSectionItem >
+ <apex:selectList value="{!selectedPicklistValue}" multiselect="false" size="1">
+    <apex:selectOptions value="{!picklistValues}" />
+</apex:selectList>
+<apex:commandLink action="{!deletePicklistValue}" value="Delete picklist value" />
+
+</apex:pageBlockSectionItem>
+ 
+</apex:pageBlockSection>
+  
+ </apex:pageBlock>
+ 
+</apex:form>
+
+<ul>
+    <apex:repeat value="{!stringPicklistValues}" var="picklistValue"><li><apex:outputText value="{!picklistValue}" /></li></apex:repeat>
+</ul>
+
+</apex:page>

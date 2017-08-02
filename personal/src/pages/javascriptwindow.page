@@ -1,0 +1,29 @@
+<apex:page controller="javascriptwindow" id="thepage">
+ <apex:form id="theform">
+ <apex:pageBlock id="thepageblock" >
+ <apex:commandButton value="Search Doctor" onclick="showDoctorPopUp();"/>
+  <apex:inputhidden id="DoctorID" value="{!DoctorId}"/>
+  <apex:inputText value="{!DoctorId1}"/>
+  <apex:actionFunction action="{!fillDoctor}" name="fillDoctor"/>
+ </apex:pageBlock>
+ </apex:form>
+ <script type="text/javascript">
+ var inputhiddenID;
+ 
+ function showDoctorPopUp() {
+  
+    var tempcells = document.getElementsByTagName("*"); 
+    for (var i = 0; i < tempcells.length; i++) { 
+        if (tempcells[i].id.indexOf('DoctorID') > 0) { 
+            inputhiddenID= tempcells[i];
+           
+        }
+        }
+      
+    
+    var win = window.open("/apex/lookUpDoctor?obj=" + inputhiddenID.id, "lookupDoctor", "scrollbars=1,width=800, height=600");
+    win.focus();
+   
+}
+</script>
+</apex:page>

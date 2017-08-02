@@ -1,0 +1,17 @@
+<apex:page controller="dynamicpickcls" showHeader="false">
+   <apex:form >
+      <apex:pageBlock >
+        <apex:pageBlockSection id="pbs">
+           <apex:selectList label="Please Select Account" size="1" value="{!selact}">
+                 <apex:actionSupport action="{!addcontacts}" event="onblur" reRender="pbs"/>
+                 <apex:selectOptions value="{!acctlst}">                 
+                 </apex:selectOptions>
+           </apex:selectList>
+           <apex:selectList label="Slected values are" size="1" rendered="{!display}">
+               <apex:selectOptions value="{!contlst}"> </apex:selectOptions>
+           </apex:selectList>           
+           <apex:commandButton value="Refresh" action="{!addcontacts}"/>
+        </apex:pageBlockSection>
+      </apex:pageBlock>
+   </apex:form>
+</apex:page>

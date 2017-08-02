@@ -1,0 +1,27 @@
+<apex:page controller="SortedListSample">
+  <apex:form >
+  <apex:pageBlock >
+   <apex:commandButton value="dispaly Sorted List" action="{!show}" />
+  
+  <apex:pageBlockTable value="{!memList}" var="b" >
+  <apex:column >
+
+      <apex:facet name="header">Account Name</apex:facet>
+
+       <apex:outputText value="{!b.name}"/>
+
+  </apex:column>
+
+
+
+  <apex:column >
+
+      <apex:facet name="header">Score</apex:facet>
+
+       <apex:outputText value="{!b.score__c}"/>
+
+  </apex:column>
+  </apex:pageBlockTable>
+  </apex:pageBlock>
+  </apex:form>
+</apex:page>

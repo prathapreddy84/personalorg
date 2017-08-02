@@ -1,0 +1,15 @@
+<apex:page showheader="false" controller="customcls" tabStyle="contact">
+  <apex:form >
+     <apex:pagemessages ></apex:pagemessages>
+     <apex:pageblock title="Account Creation">
+       <apex:pageblockSection title="Information">
+          <apex:inputText value="{!acctname}" label="Account Name"/>
+          <apex:inputText value="{!phone}" label="Phone"/>
+          <apex:inputText value="{!city}" label="City"/>
+       </apex:pageblockSection>
+       <apex:pageblockButtons >
+          <apex:commandButton value="Save Record" action="{!saverecord}"/>
+       </apex:pageblockButtons>
+     </apex:pageblock>
+  </apex:form>
+</apex:page>

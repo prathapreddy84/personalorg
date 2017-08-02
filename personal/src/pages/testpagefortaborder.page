@@ -1,0 +1,12 @@
+<apex:page standardController="contact">
+<apex:form >
+<apex:pageBlock >
+  <apex:pageBlockSection >
+<apex:inputField taborderhint="1" value="{!contact.FirstName}"/>
+<apex:inputField taborderhint="2" value="{!contact.Email}"/>
+<apex:inputField taborderhint="3" value="{!contact.LastName}"/>
+<apex:inputField taborderhint="4" value="{!contact.Phone}"/>
+</apex:pageBlockSection>
+</apex:pageBlock>
+</apex:form>
+</apex:page>

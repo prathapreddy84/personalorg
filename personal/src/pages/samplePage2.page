@@ -1,0 +1,19 @@
+<apex:page standardController="Position__c" recordSetvar="Positions">
+  <apex:pageBlock title="Viewing Accounts">
+  <apex:form id="theForm">
+    <apex:pageBlockSection >
+      <apex:pageBlockTable value="{!Positions}" var="pos">
+                <apex:column value="{!pos.name}"/>
+                <apex:column headerValue="status">
+                    <apex:inputField value="{!pos.Status__c}"/>
+                </apex:column>
+
+            </apex:pageBlockTable> 
+    </apex:pageBlockSection>
+    <apex:panelGrid columns="2">
+      <apex:commandLink action="{!previous}">Previous</apex:commandlink>
+      <apex:commandLink action="{!next}">Next</apex:commandlink>
+    </apex:panelGrid>
+  </apex:form> 
+  </apex:pageBlock>
+</apex:page>

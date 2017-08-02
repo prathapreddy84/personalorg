@@ -1,0 +1,10 @@
+<apex:page controller="sample1">
+  <apex:form >
+  <apex:inputText value="{!test}" label="TEST"/>
+  <apex:repeat value="{!pos}" var="opp"> 
+     
+     <apex:outputField value="{!opp.id}"/>
+      <apex:outputField value="{!opp.name}"/><br/>
+  </apex:repeat>
+  </apex:form>
+</apex:page>

@@ -1,0 +1,225 @@
+<apex:page controller="inventive" >
+ <body>
+
+  <apex:form >
+   <apex:actionFunction name="echo" action="{!AddAddress}" reRender="">
+      <apex:param name="address1" value="" />
+      <apex:param name="address2" value="" />
+      <apex:param name="city" value="" />
+      <apex:param name="state" value="" />
+      <apex:param name="zip" value="" />     
+   </apex:actionFunction>
+        <table width="100%" cellpadding="0" cellspacing="0" border="0" >
+        
+            <tr>
+                <td>Street address:</td>
+                <td><input type="text" id="street1"/></td>
+                
+            </tr>
+            <tr>
+                <td>Street line 2:</td>
+                <td><input type="text" id="streetTwo" /></td>
+                
+            </tr>
+            <tr>
+                <td>City:</td>
+                <td><input type="text" id="city" /></td>
+               
+            </tr>
+            <tr>
+                <td>State:</td>
+                <td><input type="text" id="state"/></td>
+                
+                
+            </tr>
+            <tr>
+                <td>ZIP Code:</td>
+                <td><input type="text" id="zip" /></td>
+                 
+            </tr>
+          
+            </table><br/>
+  
+  
+  <apex:commandButton onclick="save();" value="save"/>
+   
+  </apex:form>
+  
+  
+
+    <meta charset="utf-8"/>
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet" type="text/css"/>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="//d79i1fxsrar4t.cloudfront.net/jquery.liveaddress/2.4/jquery.liveaddress.min.js"></script>
+    <script>
+
+        /** PREPARE FORM(S) **/
+        $(function()
+        {
+            $('form#submitEvent').submit(function() {
+                alert("Form submit. Verification should happen first (if necessary), then this should occur.");
+            });
+        });
+
+        
+        var liveaddress = $.LiveAddress({token: 'QSOzljPpfyntmL8Ghb5t',
+                                key:'bab59088-30c9-4672-a381-0f4961f13cf6',
+                                debug: false,
+                                autoVerify: true,
+                                waitForStreet: true
+                                
+            
+        });
+       
+    </script>
+    <script>
+    function save()
+    {
+    
+       
+         var address1=document.getElementById("street1").value;
+         
+        var address2=document.getElementById("streetTwo").value;
+        var city=document.getElementById("city").value;
+        var state=document.getElementById("state").value;
+        var zip=document.getElementById("zip").value;
+        
+        echo(address1,address2,city,state,zip);
+    }
+    
+    </script>
+    <style>
+   body {
+        font: 400 16px/1.5em 'Open Sans', sans-serif;
+        padding: 15px 50px;
+        background: #F3F3F3;
+        text-shadow: 0 1px 0 #FFF;
+        min-width: 400px;
+    }
+
+    a {
+        color: #1790db;
+        text-decoration: none;
+    }
+
+    h1, h2, h4 {
+        text-align: center;
+        color: #222;
+        text-shadow: none;
+    }
+
+    hgroup {
+        background: #DDD;
+        padding: 1px 1px 5px;
+        margin-bottom: 50px;
+        position: relative;
+        border-radius: 10px;
+    }
+
+    h1 {
+        font: 600 45px/1em 'Open Sans', 'Helvetica Neue', sans-serif;
+        margin-bottom: 5px;
+    }
+
+    h2 {
+        font-weight: normal;
+        font-size: 25px;
+        line-height: 1em;
+    }
+
+    form {
+        border: 5px solid #AAA;
+       
+        background: #FFF;
+        margin-right: 25px;
+        margin-bottom: 25px;
+        float: left;
+        position: relative;
+    }
+
+    form header {
+        padding: 10px 15px 0;
+        background: #F0F0F0;
+    }
+
+    form header p {
+        margin: 0;
+        padding: 0;
+        font-size: 12px;
+    }
+
+    form header h3 {
+        font-weight: 300;
+        font-size: 27px;
+        margin: 0;
+        padding-bottom: 10px;
+    }
+
+    form table {
+        margin: 15px 10px;
+        font-size: 14px;
+    }
+
+    form table td {
+        padding: 5px;
+    }
+
+    form input[type=text],
+    form textarea {
+        padding: 5px 5px 3px;
+        font: 12px/1em sans-serif;
+        width: 160px;
+        outline: none;
+    }
+
+    form select {
+        outline: none;
+    }
+
+    form textarea {
+        min-height: 40px;
+    }
+
+    form input[type=submit],
+    form [type=image],
+    form button {
+        font-size: 16px;
+    }
+
+    .formNumber {
+        background: #3d3d3d;
+        color: #FFF;
+        width: 25px;
+        height: 25px;
+        padding: 5px;
+        text-align: center;
+        border-radius: 20px;
+        position: absolute;
+        top: -15px;
+        right: -15px;
+        font-size: 14px;
+        box-shadow: 0 1px 2px #222;
+        text-shadow: none;
+    }
+
+    .clear {
+        border: none;
+        background: none;
+        clear: both;
+    }
+
+    label {
+        cursor: pointer;
+    }
+
+    .disclaimer {
+        padding: 0 10% 0 10%;
+        width: 50%;
+        
+        color: #8E8E8E;
+        font: italic 15px Times;
+        text-align: center;
+    }
+    </style>
+    </body>
+</apex:page>

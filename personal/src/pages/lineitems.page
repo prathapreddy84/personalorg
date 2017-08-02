@@ -1,0 +1,18 @@
+<apex:page controller="position" >
+<apex:form >
+   <apex:pageBlock >
+    <apex:pageBlockTable value="{!emplist}" var="e">
+      <apex:column headerValue="Name" value="{!e.Name}"/>
+      <apex:column >
+           <apex:commandButton value="Click Here" action="{!getValue}" reRender="hidden">
+            <apex:param name="recordId" value="{!e.Id}"  assignTo="{!recordId}"/>
+           </apex:commandButton>
+           
+           <apex:outputPanel id="hidden" rendered="false"/>
+
+      </apex:column>      
+    </apex:pageBlockTable>
+   </apex:pageBlock>
+</apex:form>
+
+</apex:page>

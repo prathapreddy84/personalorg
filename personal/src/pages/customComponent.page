@@ -1,0 +1,5 @@
+<apex:page >
+<c:firstcomponet />
+<br/>
+<c:firstcomponet />
+</apex:page>

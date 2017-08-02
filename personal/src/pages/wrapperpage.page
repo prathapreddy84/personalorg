@@ -1,0 +1,12 @@
+<apex:page controller="samplecls" showHeader="false" tabStyle="Product2">
+   <apex:form >
+      <apex:pageBlock >
+         <apex:pageblockTable value="{!stdlst}" var="std">
+              <apex:column value="{!std.name}" headerValue="Student Name"/>
+              <apex:column value="{!std.coursename}" headerValue="Course Name"/>              
+              <apex:column value="{!std.fees}" headerValue="Fees"/>
+              <apex:column value="{!std.rollnumb}" headerValue="Roll Number"/>
+         </apex:pageblockTable>
+      </apex:pageBlock>
+   </apex:form>
+</apex:page>

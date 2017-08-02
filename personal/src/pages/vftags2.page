@@ -1,0 +1,16 @@
+<apex:page standardController="customer__c" extensions="custext1" >
+<apex:form >
+
+
+<apex:inputField value="{!c.State__c}"  >
+<apex:actionSupport event="onchange"  action="{!showRec}" />
+</apex:inputField><br/>
+
+<apex:inputField value="{!c.User__c}" / >
+<apex:outputPanel id="test" rendered="{!render}" > <!-- -->
+<apex:repeat value="{!lstcust}" var="l">
+<apex:outputField value="{!l.name}"/><br/>
+</apex:repeat>
+</apex:outputPanel>
+</apex:form>
+</apex:page>

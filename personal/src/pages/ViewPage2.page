@@ -1,0 +1,11 @@
+<apex:page controller="SearchController1" title="ViewPage" showHeader="false" sidebar="false" id="page" action="{!checkCurrentPage}">
+    <apex:form id="form">
+        <apex:pageBlock id="block">
+            <apex:pageBlockTable value="{!accounts}" var="item">
+                <apex:column headerValue="{!$ObjectType.Account.Fields.Name.Label}">
+                    <apex:outputText value="{!item.Name}" />
+                </apex:column> 
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+     </apex:form>
+</apex:page>

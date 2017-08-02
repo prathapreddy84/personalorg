@@ -1,0 +1,28 @@
+<apex:page controller="picklist" >
+<apex:form >
+   <apex:selectlist size="1" Value="{!selected}">
+       <apex:selectOptions value="{!options}">
+    </apex:selectOptions>
+       <apex:actionSupport event="onchange" action="{!show}" rerender="one"/>   
+    </apex:selectlist>
+    <apex:pageBlock id="one">
+     <table>
+                <tr>
+                  
+                    <td align="left" ><b>ID</b></td>    
+                    <td align="left"><b>Name</b></td>
+                   
+                 
+                </tr>
+       <apex:repeat value="{!jb}" var="reps1" >
+        <tr  style="height:35px;">
+        <td>
+       <apex:outputField value="{!reps1.id}" /></td>
+        <td>
+       <apex:outputField value="{!reps1.name}" /></td>
+        </tr  >
+       </apex:repeat>
+       </table>
+    </apex:pageBlock>
+    </apex:form>
+</apex:page>

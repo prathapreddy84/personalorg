@@ -1,0 +1,43 @@
+<apex:page controller="fourth">
+ <apex:form >
+ <apex:selectCheckboxes value="{!conuntries1}">
+ <apex:selectOptions value="{!conuntries}"></apex:selectOptions>
+ </apex:selectCheckboxes>
+ <apex:pageBlock >
+ <apex:pageBlockTable value="{!inputfileds}" var="contact" cellPadding="1" border="1">>
+   <apex:column >
+                <apex:facet name="header">Name</apex:facet>
+                       
+            </apex:column>
+            <apex:column >
+                <apex:facet name="header">Contact</apex:facet>
+                       
+            </apex:column>
+             <apex:column >
+            <apex:pageblockTable value="{!inputfileds}" var="contact1" >
+            <apex:column >
+                <apex:facet name="header">Account</apex:facet>
+                       
+            </apex:column>
+            </apex:pageblockTable>
+            </apex:column>
+             <apex:column >
+                <apex:facet name="header">Account</apex:facet>
+                       
+            </apex:column>
+ </apex:pageBlockTable>
+ </apex:pageBlock>
+ <apex:outputPanel id="do" layout="block">
+ <apex:pageMessages ></apex:pageMessages>
+ 
+ 
+ <apex:repeat value="{!inputfileds}" var="filedkey">
+ <apex:outputText value="{!filedkey}"></apex:outputText>
+ <apex:inputtext value="{!inputfileds[filedkey]}" />
+ <br/>
+ </apex:repeat>
+ <apex:commandButton action="{!show}" value="show" reRender="do"/>
+ </apex:outputPanel>
+ <apex:commandButton action="{!show1}" value="mail" />
+ </apex:form>
+</apex:page>
